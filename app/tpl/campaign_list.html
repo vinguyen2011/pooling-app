@@ -1,0 +1,62 @@
+<div class="home-popular-project" ng-controller="CampaignListCtrl">
+    <div class="container_12">
+        <div class="form-search">
+            <form action="#">
+                <label for="sys_txt_keyword">
+                    <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search campaigns" ng-model="search.name"/>
+                </label>
+                <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
+                <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
+            </form>
+        </div>
+        <div class="grid_12 wrap-title">
+            <h2 class="common-title">Campaigns</h2>
+        </div>
+        <div class="clear"></div>
+        <div class="lst-popular-project clearfix">
+            <div class="grid_3" ng-repeat="campaign in campaigns | reverse | filter: search.name | filter: { 'type': '!UNWINDED' }">
+                <div class="project-short sml-thumb">
+                    <div class="top-project-info">
+                        <div class="content-info-short clearfix">
+                            <a href="/#/campaign/{{ campaign.id }}" class="thumb-img">
+                                <img ng-src="{{ campaign.image_url || '/images/ex/th-192x135.jpg' }}" alt="{{ campaign.name }}" style="height:135px;">
+                            </a>
+                            <div class="wrap-short-detail">
+                                <h3 class="rs acticle-title">
+                                    <a class="be-fc-orange" href="/#/campaign/{{ campaign.id }}">{{ campaign.name }}</a></h3>
+                                <p class="rs tiny-desc">by
+                                    <a href="/#/user/{{ campaign.creator_username }}" class="fw-b fc-gray be-fc-orange">{{ campaign.user.firstname + " " + campaign.user.lastname }}</a></p>
+                                <p class="rs title-description">{{ campaign.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-project-info clearfix">
+                        <div class="line-progress">
+                            <div class="bg-progress">
+                                <span style="width: {{ (100/(campaign.target_amount/campaign.current_amount)).toFixed(0) }}%"></span>
+                            </div>
+                        </div>
+                        <div class="group-fee clearfix">
+                            <div class="fee-item">
+                                <p class="rs lbl">Funded</p>
+                                <span class="val">{{ (100/(campaign.target_amount/campaign.current_amount)).toFixed(0) }}%</span>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="fee-item">
+                                <p class="rs lbl">Target</p>
+                                <span class="val">&euro; {{ campaign.target_amount.toFixed(0) }}</span>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="fee-item">
+                                <p class="rs lbl">Pledged</p>
+                                <span class="val">&euro; {{ campaign.current_amount.toFixed(0) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end: .grid_3 > .project-short-->
+        </div>
+    </div>
+</div>
+<!--end: .home-popular-project -->

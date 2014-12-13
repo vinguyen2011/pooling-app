@@ -1,0 +1,65 @@
+
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="project-detail">
+            <div class="project-tab-detail tabbable accordion">
+                <ul class="nav nav-tabs clearfix">
+                    <li class="active"><a href="javascript://">Campaign</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div>
+                        <div class="tab-pane accordion-content active">
+                            <div class="form form-profile">
+                                <form>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="txt_name1">Name:</label>
+                                        <div class="val">
+                                            <input class="txt" type="text" id="txt_name1" ng-model="campaign.name">
+                                            <p class="rs description-input">This is how your campaign will be desplayed</p>
+                                        </div>
+                                    </div>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="txt_location2">Category</label>
+                                        <div class="val">
+                                            <select ng-model="campaign.type">
+                                                <option value>Select a category</option>
+                                                <option ng-repeat="category in categories">{{ category }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="campaign_description">Description:</label>
+                                        <div class="val">
+                                            <textarea class="txt fill-width" id="campaign_description" cols="30" rows="10" ng-model="campaign.description"></textarea>
+                                            <p class="rs description-input">We suggest a brief description of your campaign.</p>
+                                        </div>
+                                    </div>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="campaign_target_amount">Target amount:</label>
+                                        <div class="val">
+                                            <input class="txt" id="campaign_target_amount" type="text" ng-model="campaign.target_amount">
+                                            <select ng-model="campaign.currency" ng-init="campaign.currency='EUR'">
+                                                <option value="EUR">Euro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="campaign_image_url">Image URL:</label>
+                                        <div class="val">
+                                            <input class="txt txt-website" type="text" id="campaign_image_url" value="" ng-model="campaign.image_url">
+                                        </div>
+                                    </div>
+
+                                    <p class="wrap-btn-submit rs ta-r">
+                                        <button class="btn btn-red btn-submit-all" ng-click="saveCampaign(campaign)">{{ campaign.id===undefined ? 'Create' : 'Update' }} campaign</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div><!--end: .tab-pane -->
+                    </div>
+                </div>
+            </div><!--end: .project-tab-detail -->
+        </div>
+    </div>
+</div><!--end: .content -->

@@ -1,0 +1,15 @@
+{
+  "name": "pooling-app",
+  "version": "1.0.0",
+  "description": "PoolING app created on the 24H-CodeIT hackathon on the 12th of November 2014.",
+  "author": "Matthijs Dabroek <dabroek@gmail.com>",
+  "main": "app/app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^1.7.2",
+    "gulp": "^3.8.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

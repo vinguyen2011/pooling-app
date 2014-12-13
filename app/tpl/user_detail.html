@@ -1,0 +1,31 @@
+<div class="layout-2cols">
+    <div class="content grid_12">
+        <div class="project-detail">
+            <div class="project-tab-detail tabbable accordion">
+                <ul class="nav nav-tabs clearfix">
+                  <li class="active"><a href="javascript://">Profile</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div>
+                        <h3 class="rs alternate-tab accordion-label">Profile</h3>
+                        <div class="tab-pane accordion-content active">
+                            <div class="tab-pane-inside">
+                                <div class="project-author pb20">
+                                    <div class="media">
+                                        <a href="#" class="thumb-left">
+                                            <img ng-src="{{ user.image || '/images/ex/th-90x90.jpg' }}" alt="{{ user.username }}">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="rs pb10"><a href="#" class="be-fc-orange fw-b">{{ user.firstname + " " + user.lastname }}</a></h4>
+                                            <p class="rs description">Mauris vel lacus vitae felis vestibulum volutpat. Etiam est nunc, venenatis in, tristique eu, imperdiet ac, nisl. Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                        </div>
+                                    </div>
+                                </div><!--end: .project-author -->
+                            </div>
+                        </div><!--end: .tab-pane -->
+                    </div>
+                  </div>
+            </div><!--end: .project-tab-detail -->
+        </div>
+    </div><!--end: .content -->
+</div>

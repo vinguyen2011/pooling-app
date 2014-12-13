@@ -1,0 +1,41 @@
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="project-detail">
+            <div class="project-tab-detail tabbable accordion">
+                <ul class="nav nav-tabs clearfix">
+                    <li class="active"><a href="javascript://">Contribution</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div>
+                        <h3 class="rs alternate-tab accordion-label">Profile</h3>
+                        <div class="tab-pane accordion-content active">
+                            <div class="form form-profile">
+                                <form>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="contribution_amount">Amount:</label>
+                                        <div class="val">
+                                            <input class="txt" type="text" id="contribution_amount" ng-model="contribution.amount"/>
+                                            <select ng-model="contribution.currency" ng-init="contribution.currency='EUR'">
+                                                <option value="EUR">Euro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row-item clearfix">
+                                        <label class="lbl" for="contribution_message">Message:</label>
+                                        <div class="val">
+                                            <textarea class="txt fill-width" id="contribution_message" cols="30" rows="10" ng-model="contribution.description"/></textarea>
+                                            <p class="rs description-input">This field is optional</p>
+                                        </div>
+                                    </div>
+                                    <p class="wrap-btn-submit rs ta-r">
+                                        <button class="btn btn-red btn-submit-all" ng-click="contributeToCampaign(campaign, contribution)">Contribute</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div><!--end: .tab-pane -->
+                    </div>
+                </div>
+            </div><!--end: .project-tab-detail -->
+        </div>
+    </div>
+</div><!--end: .content -->
