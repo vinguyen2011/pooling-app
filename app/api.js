@@ -3,7 +3,7 @@
 
     angular.module('app.api', ['ngCookies'])
 
-        .constant('API_URL', "http://172.17.37.132:8080")
+        .constant('API_URL', "http://172.26.244.179:8080")
 
         .factory('ApiService', function ($http, $cookies, API_URL) {
 
@@ -23,7 +23,7 @@
                 getCampaignContributions: getCampaignContributions,
                 addAccessToken: addAccessToken
             };
-
+                    
             function login(cb, user) {
                 $http.get(API_URL + '/validateUser?username=' + user.username + '&password=' + user.password)
                     .success(function (data, status, headers, config) { return cb(data); })
@@ -62,6 +62,7 @@
             }
 
             function getCampaigns(cb) {
+            	$http.defaults.useXDomain = true
                 $http.get(API_URL + '/getCampaigns')
                     .success(function (data, status, headers, config) { return cb(data); })
                     .error(function (data, status, headers, config) { return cb(data); });
